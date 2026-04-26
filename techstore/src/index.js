@@ -15,3 +15,21 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+{
+  "builds": [
+    {
+      "src": "techstore/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "techstore/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "techstore/$1"
+    }
+  ]
+}
